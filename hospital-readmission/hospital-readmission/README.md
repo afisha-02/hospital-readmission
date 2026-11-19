@@ -59,8 +59,8 @@ MODEL_CARD.md   intended use, limits and subgroup results
 ## Run it
 
 ```bash
-git clone https://github.com/afisha-02/<repo-name>.git
-cd <repo-name>
+git clone https://github.com/afisha-02/<hospital-readmission>.git
+cd <hospital-readmission>
 pip install -r requirements.txt
 
 # data and training
