@@ -1,0 +1,24 @@
+{
+  "validation_status": "PASSED",
+  "total_rows": 101766,
+  "total_columns": 50,
+  "duplicate_rows": 0,
+  "duplicate_encounters": 0,
+  "overall_missing_cells_pct": 7.35,
+  "target_distribution": {
+    "NO": 54864,
+    ">30": 35545,
+    "<30": 11357
+  },
+  "high_missingness_features": {
+    "weight": 96.86,
+    "payer_code": 39.56,
+    "medical_specialty": 49.08,
+    "max_glu_serum": 94.75,
+    "A1Cresult": 83.28
+  },
+  "out_of_bounds_features": {},
+  "unexpected_categories": {},
+  "errors": [],
+  "warnings": []
+}

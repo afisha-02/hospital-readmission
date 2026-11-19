@@ -1,0 +1,36 @@
+patient_id,time_in_hospital,num_lab_procedures,num_procedures,num_medications,number_outpatient,number_emergency,number_inpatient,number_diagnoses,race,gender,age,admission_type_desc,discharge_disposition_desc,admission_source_desc,max_glu_serum,A1Cresult,primary_diagnosis_group,secondary_diagnosis_group,change,diabetesMed,insulin,metformin
+PT-1001,4,52,1,20,0,0,0,3,Caucasian,Male,[60-70),Other,SNF/Nursing,Physician/Clinic Referral,None,None,Musculoskeletal,Respiratory,No,Yes,No,Steady
+PT-1002,7,35,2,28,0,0,1,9,Caucasian,Male,[40-50),Urgent,Home,Physician/Clinic Referral,None,None,Injury/Poisoning,Diabetes,Ch,Yes,Up,No
+PT-1003,4,17,1,27,0,0,0,9,Caucasian,Female,[70-80),Other,Home,Other,Norm,None,Musculoskeletal,Circulatory,No,No,No,No
+PT-1004,4,36,3,4,0,0,0,7,Caucasian,Male,[80-90),Urgent,Home,Physician/Clinic Referral,None,None,Digestive,Other,No,No,No,No
+PT-1005,2,41,0,15,0,0,0,7,AfricanAmerican,Female,[80-90),Emergency,Home,Emergency Room,None,None,Musculoskeletal,Other,No,Yes,No,No
+PT-1006,3,65,3,15,0,0,0,9,Caucasian,Male,[80-90),Other,Home,Other,None,Norm,Other,Circulatory,No,No,No,No
+PT-1007,1,33,0,4,0,0,0,2,Caucasian,Male,[30-40),Emergency,Home,Emergency Room,None,None,Diabetes,Other,Ch,Yes,Up,No
+PT-1008,3,36,0,2,0,0,0,6,Caucasian,Female,[70-80),Urgent,Home,Physician/Clinic Referral,None,None,Other,Diabetes,No,No,No,No
+PT-1009,4,24,2,17,2,0,0,6,Caucasian,Female,[70-80),Emergency,SNF/Nursing,Emergency Room,None,None,Circulatory,Genitourinary,No,No,No,No
+PT-1010,5,37,4,16,0,0,0,9,Hispanic,Male,[60-70),Urgent,Home,Transfer from Hospital/Facility,None,>7,Circulatory,Neoplasms,Ch,Yes,Steady,Steady
+PT-1011,3,40,3,11,0,0,0,5,Hispanic,Male,[40-50),Emergency,Home,Emergency Room,None,None,Injury/Poisoning,Injury/Poisoning,Ch,Yes,No,Steady
+PT-1012,3,1,1,13,0,0,0,5,AfricanAmerican,Male,[60-70),Elective,Home,Emergency Room,None,None,Circulatory,Circulatory,No,Yes,No,No
+PT-1013,3,42,1,8,0,0,0,4,AfricanAmerican,Female,[20-30),Emergency,Home,Emergency Room,None,None,Respiratory,Diabetes,No,Yes,No,No
+PT-1014,2,46,2,13,0,0,0,4,Caucasian,Female,[30-40),Elective,Home,Physician/Clinic Referral,None,None,Circulatory,Diabetes,No,No,No,No
+PT-1015,6,29,2,17,2,0,0,9,Caucasian,Female,[70-80),Urgent,Home,Physician/Clinic Referral,None,None,Genitourinary,Genitourinary,Ch,Yes,No,Steady
+PT-1016,1,17,1,15,0,0,0,9,Caucasian,Female,[60-70),Elective,Home,Physician/Clinic Referral,None,None,Other,Other,Ch,Yes,Up,No
+PT-1017,4,43,1,9,0,0,0,4,Caucasian,Male,[50-60),Elective,Home,Physician/Clinic Referral,None,>8,Other,Circulatory,Ch,Yes,Steady,Steady
+PT-1018,3,48,0,6,0,0,0,6,Caucasian,Male,[70-80),Emergency,Other,Emergency Room,None,None,Genitourinary,Other,No,No,No,No
+PT-1019,2,42,0,8,0,0,0,8,Other,Female,[80-90),Emergency,Home,Emergency Room,None,None,Circulatory,Other,No,Yes,No,Steady
+PT-1020,9,21,2,17,2,0,0,9,Caucasian,Male,[60-70),Urgent,Home,Transfer from Hospital/Facility,None,None,Other,Other,No,No,No,No
+PT-1021,3,25,2,12,0,0,0,5,Caucasian,Male,[50-60),Elective,Home,Physician/Clinic Referral,None,None,Neoplasms,Genitourinary,No,No,No,No
+PT-1022,5,54,0,10,0,0,0,5,AfricanAmerican,Female,[70-80),Emergency,SNF/Nursing,Transfer from Hospital/Facility,None,>8,Other,Diabetes,No,Yes,Steady,No
+PT-1023,5,26,0,18,2,0,0,9,AfricanAmerican,Female,[60-70),Other,Home,Other,>200,None,Respiratory,Respiratory,Ch,Yes,Up,Steady
+PT-1024,6,62,0,33,0,0,1,8,Caucasian,Female,[50-60),Other,Home,Other,None,None,Respiratory,Other,Ch,Yes,No,No
+PT-1025,2,60,4,15,0,1,0,7,AfricanAmerican,Female,[70-80),Urgent,Home,Transfer from Hospital/Facility,None,None,Circulatory,Diabetes,Ch,Yes,Down,No
+PT-1026,6,54,2,27,0,0,2,14,Caucasian,Male,[80-90),Elective,Home,Physician/Clinic Referral,None,Norm,Circulatory,Genitourinary,Ch,Yes,Steady,No
+PT-1027,12,37,0,7,0,0,1,5,Missing,Male,[70-80),Urgent,Home,Physician/Clinic Referral,None,None,Circulatory,Circulatory,Ch,Yes,Steady,Steady
+PT-1028,9,58,0,19,0,0,0,9,Caucasian,Female,[80-90),Elective,Home,Transfer from Hospital/Facility,None,None,Other,Other,Ch,Yes,Steady,No
+PT-1029,3,36,1,8,0,0,0,8,Caucasian,Male,[70-80),Emergency,Home,Emergency Room,None,None,Other,Injury/Poisoning,No,No,No,No
+PT-1030,1,1,4,15,2,0,0,4,Caucasian,Male,[60-70),Other,Home,Physician/Clinic Referral,None,None,Circulatory,Circulatory,No,Yes,Steady,No
+PT-1031,7,90,0,21,0,0,2,9,Caucasian,Male,[70-80),Emergency,SNF/Nursing,Emergency Room,None,>8,Circulatory,Circulatory,Ch,Yes,Down,No
+PT-1032,1,57,1,11,0,0,0,9,Caucasian,Female,[60-70),Emergency,Home,Emergency Room,None,None,Digestive,Diabetes,Ch,Yes,Down,No
+PT-1033,7,48,1,25,1,0,0,7,Caucasian,Male,[80-90),Elective,Home,Physician/Clinic Referral,None,None,Circulatory,Circulatory,Ch,Yes,Up,Steady
+PT-1034,4,18,2,10,2,0,0,8,Caucasian,Female,[30-40),Elective,Home,Physician/Clinic Referral,None,None,Other,Diabetes,No,No,No,No
+PT-1035,1,10,5,10,0,0,0,7,Caucasian,Female,[80-90),Elective,Home,Physician/Clinic Referral,None,None,Circulatory,Other,No,Yes,Steady,No

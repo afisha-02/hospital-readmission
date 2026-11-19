@@ -1,0 +1,82 @@
+[
+  {
+    "feature": "discharge_disposition_desc_Home",
+    "mean_abs_shap": 0.22415460646152496
+  },
+  {
+    "feature": "utilization_intensity",
+    "mean_abs_shap": 0.09784792363643646
+  },
+  {
+    "feature": "time_in_hospital",
+    "mean_abs_shap": 0.07584967464208603
+  },
+  {
+    "feature": "number_inpatient",
+    "mean_abs_shap": 0.06643547117710114
+  },
+  {
+    "feature": "primary_diagnosis_group_Circulatory",
+    "mean_abs_shap": 0.05465974286198616
+  },
+  {
+    "feature": "med_per_day",
+    "mean_abs_shap": 0.05169740319252014
+  },
+  {
+    "feature": "num_medications",
+    "mean_abs_shap": 0.05113722383975983
+  },
+  {
+    "feature": "num_lab_procedures",
+    "mean_abs_shap": 0.050505589693784714
+  },
+  {
+    "feature": "diabetes_med_count",
+    "mean_abs_shap": 0.04757978394627571
+  },
+  {
+    "feature": "age_[50-60)",
+    "mean_abs_shap": 0.04309994727373123
+  },
+  {
+    "feature": "lab_per_day",
+    "mean_abs_shap": 0.043023429811000824
+  },
+  {
+    "feature": "number_diagnoses",
+    "mean_abs_shap": 0.041746702045202255
+  },
+  {
+    "feature": "discharge_disposition_desc_Rehabilitation",
+    "mean_abs_shap": 0.03308669850230217
+  },
+  {
+    "feature": "high_utilizer_flag_High",
+    "mean_abs_shap": 0.025479895994067192
+  },
+  {
+    "feature": "primary_diagnosis_group_Respiratory",
+    "mean_abs_shap": 0.023881010711193085
+  },
+  {
+    "feature": "secondary_diagnosis_group_Respiratory",
+    "mean_abs_shap": 0.02268090657889843
+  },
+  {
+    "feature": "primary_diagnosis_group_Musculoskeletal",
+    "mean_abs_shap": 0.01852545700967312
+  },
+  {
+    "feature": "metformin_No",
+    "mean_abs_shap": 0.017773427069187164
+  },
+  {
+    "feature": "num_procedures",
+    "mean_abs_shap": 0.017346234992146492
+  },
+  {
+    "feature": "secondary_diagnosis_group_Diabetes",
+    "mean_abs_shap": 0.0172434002161026
+  }
+]

@@ -1,0 +1,45 @@
+{
+  "initial_encounters": 101766,
+  "initial_unique_patients": 71518,
+  "terminal_hospice_encounters_excluded": 2423,
+  "repeat_encounters_removed": 29353,
+  "final_clean_encounters": 69990,
+  "final_unique_patients": 69990,
+  "leakage_audit_register": [
+    {
+      "feature": "discharge_disposition_id (Expired / Hospice: 11, 13, 14, 19, 20, 21)",
+      "leakage_type": "Target / Survivorship Confounding",
+      "why_it_leaks": "Patients who died during the hospital stay (Code 11: Expired) or were discharged to hospice care (Codes 13, 14, 19, 20, 21) cannot logically be readmitted. Including them confounds readmission risk with in-hospital mortality, creating severe survivorship bias and distorting clinical decision thresholds.",
+      "decision": "Filter out all encounters with discharge disposition codes 11, 13, 14, 19, 20, 21.",
+      "action_taken": "Excluded 2,284 terminal/hospice encounters prior to any model training or evaluation."
+    },
+    {
+      "feature": "patient_nbr (Repeat Patient Encounters)",
+      "leakage_type": "Longitudinal Patient Contamination",
+      "why_it_leaks": "The 101,766 encounters represent 71,518 unique patients. A naive random train/test split would place early encounters of a patient into the training set and later encounters of the same patient into the test set. The model would memorize patient-level chronic patterns rather than learning generalizable risk factors, causing overly optimistic test metrics.",
+      "decision": "Deduplicate by keeping each patient's primary (first) encounter (Strack et al., 2014 benchmark) and strictly enforce patient-level grouping so no patient appears in multiple splits.",
+      "action_taken": "Kept primary encounters (1 per unique patient) and verified zero overlap across train/val/test."
+    },
+    {
+      "feature": "encounter_id",
+      "leakage_type": "Administrative Index Leakage",
+      "why_it_leaks": "Arbitrary database primary key that may correlate with hospital admission batch dates or temporal ordering not available at prediction time.",
+      "decision": "Remove encounter_id from all feature sets.",
+      "action_taken": "Encounter ID is completely dropped from training and inference feature matrices."
+    },
+    {
+      "feature": "Data Preprocessing Transformations (Imputation & Scaling)",
+      "leakage_type": "Distributional Information Leakage",
+      "why_it_leaks": "Computing medians, means, or frequency encodings across the full dataset before splitting leaks test set distributional statistics into training parameters.",
+      "decision": "Fit preprocessing transformers strictly on X_train only; transform X_val and X_test.",
+      "action_taken": "Wrapped in a strict Scikit-learn Pipeline / ColumnTransformer evaluated via held-out split."
+    },
+    {
+      "feature": "Future Encounter Timeline",
+      "leakage_type": "Look-ahead Bias",
+      "why_it_leaks": "Features collected after discharge (such as post-discharge prescription fills or follow-up calls) cannot exist at the discharge prediction moment.",
+      "decision": "Constrain all engineered features strictly to observations documented on or before discharge.",
+      "action_taken": "Only pre-discharge utilization, inpatient labs, stay duration, and discharge medications are used."
+    }
+  ]
+}

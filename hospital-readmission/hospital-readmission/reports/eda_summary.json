@@ -1,0 +1,61 @@
+{
+  "target": {
+    "negative_count": 63705,
+    "positive_count": 6285,
+    "positive_rate_pct": 8.98
+  },
+  "missingness": {
+    "weight": 96.86,
+    "max_glu_serum": 94.75,
+    "A1Cresult": 83.28,
+    "medical_specialty": 49.08,
+    "payer_code": 39.56,
+    "race": 2.23,
+    "diag_3": 1.4,
+    "diag_2": 0.35
+  },
+  "utilization": {
+    "0 visits": 8.13,
+    "1 visit": 12.88,
+    "2 visits": 18.52,
+    "3 visits": 23.76,
+    "4+ visits": 29.33
+  },
+  "demographics": {
+    "[0-10)": 1.96,
+    "[10-20)": 4.87,
+    "[20-30)": 7.4,
+    "[30-40)": 6.98,
+    "[40-50)": 7.41,
+    "[50-60)": 7.12,
+    "[60-70)": 9.02,
+    "[70-80)": 10.24,
+    "[80-90)": 10.79,
+    "[90-100)": 9.54
+  },
+  "diagnosis": {
+    "Missing/Unknown": 20.0,
+    "Injury/Poisoning": 10.8,
+    "Circulatory": 9.68,
+    "Diabetes": 9.12,
+    "Neoplasms": 9.06,
+    "Other": 8.98,
+    "Genitourinary": 8.98,
+    "Musculoskeletal": 8.39,
+    "Digestive": 8.01,
+    "Respiratory": 7.3
+  },
+  "correlations": {
+    "time_in_hospital": 0.0558,
+    "num_lab_procedures": 0.0321,
+    "num_procedures": -0.0003,
+    "num_medications": 0.0362,
+    "number_outpatient": 0.0086,
+    "number_emergency": 0.028,
+    "number_inpatient": 0.1003,
+    "number_diagnoses": 0.0456,
+    "total_encounters_prior": 0.0587,
+    "utilization_intensity": 0.0647,
+    "diabetes_med_count": 0.0114
+  }
+}

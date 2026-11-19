@@ -1,0 +1,102 @@
+# Hospital Readmission Risk Intelligence - Platform Configuration
+
+project:
+  name: "Hospital Readmission Risk Intelligence"
+  tagline: "Explainable machine learning for proactive readmission risk assessment."
+  version: "1.0.0"
+  description: "An end-to-end, explainable machine learning platform that estimates hospital readmission risk, explains the factors influencing each prediction, evaluates model performance across operating thresholds, and provides model monitoring and experiment-tracking capabilities."
+  disclaimer: "RESEARCH / PORTFOLIO PROTOTYPE: This platform estimates readmission risk from historical data for analytical evaluation. It is NOT a clinical decision-making or diagnostic system and has not been clinically validated."
+
+paths:
+  raw_data: "data/raw/diabetic_data.csv"
+  ids_mapping: "data/raw/IDS_mapping.csv"
+  processed_train: "data/processed/train.parquet"
+  processed_val: "data/processed/val.parquet"
+  processed_test: "data/processed/test.parquet"
+  preprocessor: "models/artifacts/preprocessor.joblib"
+  model: "models/artifacts/model_xgboost_calibrated.joblib"
+  uncalibrated_model: "models/artifacts/model_xgboost_raw.joblib"
+  baseline_models: "models/artifacts/baselines.joblib"
+  metadata: "models/artifacts/model_metadata.json"
+  explainer: "models/artifacts/shap_explainer.joblib"
+  metrics_report: "reports/model_comparison.json"
+  quality_report: "reports/data_quality_report.json"
+  leakage_report: "reports/leakage_audit_report.json"
+  subgroup_report: "reports/subgroup_fairness_report.json"
+  threshold_report: "reports/threshold_analysis.json"
+  drift_baseline: "data/processed/drift_reference.parquet"
+
+data:
+  target_column: "readmitted"
+  positive_target_value: "<30"
+  random_state: 42
+  train_ratio: 0.70
+  val_ratio: 0.15
+  test_ratio: 0.15
+  stratify_by_target: true
+  patient_id_column: "patient_nbr"
+  encounter_id_column: "encounter_id"
+  # Leakage prevention: exclude deceased or hospice discharge codes (11, 13, 14, 19, 20, 21)
+  leakage_discharge_ids_to_exclude: [11, 13, 14, 19, 20, 21]
+  # Deduplication strategy: primary encounter per patient to avoid patient recurrence leakage
+  deduplicate_patients: true
+
+features:
+  numerical:
+    - "time_in_hospital"
+    - "num_lab_procedures"
+    - "num_procedures"
+    - "num_medications"
+    - "number_outpatient"
+    - "number_emergency"
+    - "number_inpatient"
+    - "number_diagnoses"
+    - "total_encounters_prior"
+    - "utilization_intensity"
+    - "lab_per_day"
+    - "med_per_day"
+    - "diabetes_med_count"
+  categorical:
+    - "race"
+    - "gender"
+    - "age"
+    - "admission_type_desc"
+    - "discharge_disposition_desc"
+    - "admission_source_desc"
+    - "max_glu_serum"
+    - "A1Cresult"
+    - "primary_diagnosis_group"
+    - "secondary_diagnosis_group"
+    - "change"
+    - "diabetesMed"
+    - "high_utilizer_flag"
+    - "insulin"
+    - "metformin"
+  drop_high_missing:
+    - "weight"            # 97% missing
+    - "payer_code"        # 40% missing, administrative billing code with low clinical transferability
+    - "medical_specialty" # 49% missing
+
+optuna:
+  n_trials: 25
+  timeout: 300
+  metric: "pr_auc"
+  direction: "maximize"
+
+cost_matrix:
+  cost_fn: 5000.0   # False Negative: Unplanned readmission, complications, CMS penalty (illustrative)
+  cost_fp: 500.0    # False Positive: Proactive outreach, phone call, care coordinator review (illustrative)
+  cost_tp: 750.0    # True Positive: Intervention cost + partial readmission prevention (illustrative)
+  cost_tn: 0.0      # True Negative: No unnecessary action needed
+
+thresholding:
+  default_threshold: 0.35
+  min_threshold: 0.05
+  max_threshold: 0.95
+  step: 0.025
+
+monitoring:
+  drift_psi_stable: 0.10
+  drift_psi_monitor: 0.25
+  drift_ks_p_value_threshold: 0.05
+  sample_size_warning: 50
